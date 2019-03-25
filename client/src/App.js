@@ -1,26 +1,26 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './App.css';
+
+import CreateCharacter from "./components/create-character.component";
+import ChooseClass from "./components/choose-race.component";
+import ChooseRace from "./components/choose-class.component";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Router>
+        <div className="App">
+          <h1>Dungeoneer</h1>
+          <br/>
+          <Link to="/createCharacter">Create Character</Link><br/>
+          <Link to="/chooseClass">Choose Class</Link><br/>
+          <Link to="/chooseRace">Choose Race</Link><br/>
+        </div>
+        <Route path="/createCharacter" exact component={CreateCharacter} />
+        <Route path="/chooseClass" component={ChooseClass} />
+        <Route path="/chooseRace" component={ChooseRace} />
+      </Router>
     );
   }
 }
