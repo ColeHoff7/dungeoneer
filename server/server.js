@@ -1,9 +1,9 @@
 // first we import our dependencies…
-import { getSecret } from './secrets';
 import express from 'express';
 import bodyParser from 'body-parser';
 import logger from 'morgan';
 import mongoose from 'mongoose';
+import { getSecret } from './secrets';
 
 // and create our instances
 const app = express();
@@ -19,6 +19,7 @@ app.use(logger('dev'));
 mongoose.connect(getSecret('dbUri'));
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+console.log(db.collections)
 
 // now we can set the route path & initialize the API
 router.get('/', (req, res) => {
