@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './App.css';
 
-import CreateCharacter from "./components/create-character.component";
+import CreateCharacter from "./characterCreation/create-character.component";
 
 class App extends Component {
   render() {
