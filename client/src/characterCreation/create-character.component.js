@@ -16,16 +16,16 @@ export default class CreateCharacter extends Component {
           <br/><br/>
           <p>Starting page give some information about creating a character</p>
           <br/><br/>
-          <Link to="/chooseRace">Choose Race</Link> --->
-          <Link to="/chooseClass"> Choose Class</Link> --->
-          <Link to="/setAbilityScores"> Set Ability Scores</Link> --->
-          <Link to="/chooseSkills"> Choose Skills</Link>
+          <Link to="/createCharacter/chooseRace">Choose Race</Link> --->
+          <Link to="/createCharacter/chooseClass"> Choose Class</Link> --->
+          <Link to="/createCharacter/setAbilityScores"> Set Ability Scores</Link> --->
+          <Link to="/createCharacter/chooseSkills"> Choose Skills</Link>
         </div>
 
-        <Route path="/chooseRace" component={ChooseRace} />
-        <Route path="/chooseClass" component={ChooseClass} />
-        <Route path="/setAbilityScores" component={SetAbilityScores} />
-        <Route path="/chooseSkills" component={ChooseSkills} />
+        <Route path="/createCharacter/chooseRace" component={ChooseRace} />
+        <Route path="/createCharacter/chooseClass" component={ChooseClass} />
+        <Route path="/createCharacter/setAbilityScores" component={SetAbilityScores} />
+        <Route path="/createCharacter/chooseSkills" component={ChooseSkills} />
       </Router>
     );
   }
