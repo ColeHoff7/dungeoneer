@@ -7,19 +7,19 @@ app.get('/race', function(req, res){
     res.json({races: [
         {
             id: 1,
-            name: 'dragonborn'
+            name: 'Dragonborn'
         },
         {
             id: 2,
-            name: 'dwarf'
+            name: 'Dwarf'
         },
         {
             id: 3,
-            name: 'half-orc'
+            name: 'Half-orc'
         },
         {
             id: 4,
-            name: 'human'
+            name: 'Human'
         }
     ]});
 });
