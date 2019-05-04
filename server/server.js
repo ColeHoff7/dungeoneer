@@ -9,6 +9,12 @@ import { getSecret } from './secrets';
 const app = express();
 const router = express.Router();
 
+// importing all api endpoints
+var race = require('./api/race');
+
+// adding api endpoints to app object
+app.use(race);
+
 // set our port to either a predetermined port number if you have set it up, or 3001
 const API_PORT = process.env.API_PORT || 3001;
 // now we should configure the API to use bodyParser and look for JSON data in the request body
@@ -16,11 +22,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(logger('dev'));
 
-mongoose.connect(getSecret('dbUri'));
+/*mongoose.connect(getSecret('dbUri'));
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 console.log(db.collections)
-
+*/
 // now we can set the route path & initialize the API
 router.get('/', (req, res) => {
   res.json({ message: 'Hello, World!' });
