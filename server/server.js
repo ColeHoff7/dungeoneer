@@ -8,6 +8,8 @@ import { getSecret } from './secrets';
 // and create our instances
 const app = express();
 const router = express.Router();
+var cors = require('cors');
+app.use(cors());
 
 // importing all api endpoints
 var race = require('./api/race');
@@ -20,6 +22,7 @@ const API_PORT = process.env.API_PORT || 3001;
 // now we should configure the API to use bodyParser and look for JSON data in the request body
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
 app.use(logger('dev'));
 
 /*mongoose.connect(getSecret('dbUri'));

@@ -6,7 +6,8 @@
   "scripts": {
     "start:server": "cd server && yarn start",
     "start:client": "cd client && yarn start",
-    "start:dev": "concurrently \"yarn start:server\" \"yarn start:client\""
+    "start:dev": "concurrently \"yarn start:server\" \"yarn start:client\"",
+    "install:all": "concurrently \"cd server && yarn install\" \"cd client && yarn install\""
   },
   "author": "",
   "license": "",

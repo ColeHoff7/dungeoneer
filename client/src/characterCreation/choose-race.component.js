@@ -25,7 +25,7 @@ export default class ChooseRace extends Component {
     axios.get('http://localhost:3001/race')
       .then(response => {
         console.log(response.data)
-        this.setState({ races: response.data });
+        this.setState(response.data);
       })
       .catch(error => {
         console.log(error);

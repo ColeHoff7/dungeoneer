@@ -1,6 +1,7 @@
 var express = require('express');
 var app = module.exports = express();
-
+//var cors = require('cors');
+//app.use(cors);
 // Getting all races in DB
 app.get('/race', function(req, res){
     res.json({races: [
