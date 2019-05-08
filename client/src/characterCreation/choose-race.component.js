@@ -18,12 +18,13 @@ export default class ChooseRace extends Component {
   constructor(props) {
     super(props)
 
-    this.state = {races: []}
+    this.state = {data: []}
   }
 
   componentDidMount() {
     axios.get('http://localhost:3001/race')
       .then(response => {
+        console.log(response)
         this.setState(response.data);
       })
       .catch(error => {
@@ -32,7 +33,7 @@ export default class ChooseRace extends Component {
   }
 
   races() {
-    return this.state.races.map((currentRace, i) => {
+    return this.state.data.map((currentRace, i) => {
       return <Race race={currentRace} key={i} />
     })
   }
