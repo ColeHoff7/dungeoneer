@@ -25,11 +25,11 @@ app.use(bodyParser.json());
 
 app.use(logger('dev'));
 
-/*mongoose.connect(getSecret('dbUri'));
-var db = mongoose.connection;
+// initializing db connection
+mongoose.connect(getSecret('dbUri'), {useNewUrlParser: true});
+export const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-console.log(db.collections)
-*/
+
 // now we can set the route path & initialize the API
 router.get('/', (req, res) => {
   res.json({ message: 'Hello, World!' });

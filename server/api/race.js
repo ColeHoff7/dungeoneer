@@ -1,27 +1,15 @@
 var express = require('express');
 var app = module.exports = express();
+import Race from '../models/race';
 //var cors = require('cors');
 //app.use(cors);
+
 // Getting all races in DB
 app.get('/race', function(req, res){
-    res.json({races: [
-        {
-            id: 1,
-            name: 'Dragonborn'
-        },
-        {
-            id: 2,
-            name: 'Dwarf'
-        },
-        {
-            id: 3,
-            name: 'Half-orc'
-        },
-        {
-            id: 4,
-            name: 'Human'
-        }
-    ]});
+    Race.find((err, results) => {
+      if (err) return res.json({ success: false, error: err });
+        return res.json({ success: true, data: results });
+      });
 });
 
 // Getting race by id
