@@ -24,7 +24,7 @@ export default class ChooseClass extends Component {
   componentDidMount() {
     axios.get('http://localhost:3001/class')
       .then(response => {
-        this.setState({ classes: response.data });
+        this.setState(response.data);
       })
       .catch(error => {
         console.log(error);
