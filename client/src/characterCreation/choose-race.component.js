@@ -1,15 +1,47 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import { withStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
+
+const styles = {
+  card: {
+    minWidth: 275,
+    maxWidth: 275,
+  },
+  title: {
+    fontSize: 14,
+  },
+  pos: {
+    marginBottom: 12,
+  },
+};
+
+// const Race = props => (
+//   <div>
+//     <input className="form-check-input"
+//            type="radio"
+//            name="raceChoices"
+//            id={props.race.id}
+//            value={props.race.name}
+//     />
+//     <label className="form-check-label">{props.race.name}</label><br/>
+//   </div>
+// )
 
 const Race = props => (
   <div>
-    <input className="form-check-input"
-           type="radio"
-           name="raceChoices"
-           id={props.race.id}
-           value={props.race.name}
-    />
-    <label className="form-check-label">{props.race.name}</label><br/>
+    <Card className={styles.card}>
+      <CardContent>
+        <Typography className={styles.title}>
+          {props.race.name}
+        </Typography>
+      </CardContent>
+    </Card>
   </div>
 )
 
