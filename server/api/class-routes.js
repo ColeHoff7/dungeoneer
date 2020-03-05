@@ -1,9 +1,14 @@
 var express = require('express');
 var app = module.exports = express();
+import Class from '../models/class-model'
 
 // Getting all classes
 app.get('/class', function(req, res){
-    res.json({'message': 'returning all classes'});
+    console.log("GET /class")
+    Class.find((err, results) => {
+        if (err) return res.json({ success: false, error: err });
+        return res.json({ success: true, data: results });
+      });
 });
 
 // Getting class by id

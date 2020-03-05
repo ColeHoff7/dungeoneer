@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './App.css';
 
-import CreateCharacter from "./characterCreation/create-character.component";
+import CharacterCreation from "./characterCreation/character-creation.component";
 
 class App extends Component {
   render() {
@@ -13,7 +13,7 @@ class App extends Component {
           <br/>
           <Link to="/createCharacter">Create Character</Link><br/>
         </div>
-        <Route path="/createCharacter" exact component={CreateCharacter} />
+        <Route path="/createCharacter" exact component={CharacterCreation} />
       </Router>
     );
   }

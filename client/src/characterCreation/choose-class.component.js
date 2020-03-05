@@ -5,11 +5,11 @@ const CharacterClass = props => (
   <div>
     <input className="form-check-input"
            type="radio"
-           name="raceChoices"
-           id={props.class.id}
-           value={props.class.name}
+           name="classChoices"
+           id={props.characterClass.id}
+           value={props.characterClass.name}
     />
-    <label className="form-check-label">{props.class.name}</label><br/>
+    <label className="form-check-label">{props.characterClass.name}</label><br/>
   </div>
 )
 
@@ -18,7 +18,7 @@ export default class ChooseClass extends Component {
   constructor(props) {
     super(props)
 
-    this.state = {classes: []}
+    this.state = {data: []}
   }
 
   componentDidMount() {
@@ -32,7 +32,8 @@ export default class ChooseClass extends Component {
   }
 
   classes() {
-    return this.state.classes.map((currentClass, i) => {
+    return this.state.data.map((currentClass, i) => {
+      console.log(currentClass);
       return <CharacterClass characterClass={currentClass} key={i} />
     })
   }
