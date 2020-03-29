@@ -4,10 +4,9 @@ import Class from '../models/class-model'
 
 // Getting all classes
 app.get('/class', function(req, res){
-    console.log("GET /class")
     Class.find((err, results) => {
-        if (err) return res.json({ success: false, error: err });
-        return res.json({ success: true, data: results });
+        if (err) return res.status(500).send(err);
+        return res.status(200).send(results);
       });
 });
 

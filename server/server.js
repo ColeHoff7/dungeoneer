@@ -19,14 +19,6 @@ var spellRoutes = require('./api/spell-routes');
 var weaponRoutes = require('./api/weapon-routes');
 var classRoutes = require('./api/class-routes');
 
-// adding api endpoints to app object
-app.use(armorRoutes);
-app.use(itemRoutes);
-app.use(raceRoutes);
-app.use(spellRoutes);
-app.use(weaponRoutes);
-app.use(classRoutes);
-
 // set our port to either a predetermined port number if you have set it up, or 3001
 const API_PORT = process.env.API_PORT || 3001;
 // now we should configure the API to use bodyParser and look for JSON data in the request body
@@ -53,5 +45,8 @@ router.get('/', (req, res) => {
 
 // Use our router configuration when we call /api
 app.use('/api', router);
+
+// adding api endpoints to app object
+app.use('/api', router, armorRoutes, itemRoutes, raceRoutes, spellRoutes, weaponRoutes, classRoutes);
 
 app.listen(API_PORT, () => console.log(`Listening on port ${API_PORT}`));
