@@ -6,7 +6,7 @@ import Race from '../models/race-model';
 app.get('/race', (req, res) => {
   Race.find((err, results) => {
     if (err) return res.status(500).send(err);
-    return res.send(200).send(results);
+    return res.status(200).send(results);
   });
 });
 
@@ -16,7 +16,7 @@ app.get('/race/:id', (req, res) => {
 
   Race.findById(id, (err, result) => {
     if (err) return res.status(500).send(err);
-    return res.send(200).send(result);
+    return res.status(200).send(result);
   });
 });
 
@@ -26,6 +26,6 @@ app.get('/race/name/:name([A-Za-z]+)', function(req, res){
 
   Race.find({ name: name }, (err, result) => {
     if (err) return res.status(500).send(err);
-    return res.send(200).send(result);
+    return res.status(200).send(result);
   });
 });

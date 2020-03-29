@@ -46,22 +46,22 @@ export default class ChooseRace extends Component {
   constructor(props) {
     super(props)
 
-    this.state = {data: []}
+    this.state = { races: [] }
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3001/race')
+    axios.get('http://localhost:3001/api/race')
       .then(response => {
         console.log(response)
-        this.setState(response.data);
+        this.setState({ races: response.data });
       })
       .catch(error => {
         console.log(error);
       })
   }
 
-  races() {
-    return this.state.data.map((currentRace, i) => {
+  getRaces() {
+    return this.state.races.map((currentRace, i) => {
       return <Race race={currentRace} key={i} />
     })
   }
@@ -69,7 +69,7 @@ export default class ChooseRace extends Component {
   render() {
     return (
       <div className='chooseRace'>
-        { this.races() }
+        { this.getRaces() }
       </div>
     );
   }

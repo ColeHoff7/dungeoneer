@@ -18,21 +18,21 @@ export default class ChooseClass extends Component {
   constructor(props) {
     super(props)
 
-    this.state = {data: []}
+    this.state = { characterClasses: [] }
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3001/class')
+    axios.get('http://localhost:3001/api/class')
       .then(response => {
-        this.setState(response.data);
+        this.setState({ characterClasses: response.data });
       })
       .catch(error => {
         console.log(error);
       })
   }
 
-  classes() {
-    return this.state.data.map((currentClass, i) => {
+  getClasses() {
+    return this.state.characterClasses.map((currentClass, i) => {
       console.log(currentClass);
       return <CharacterClass characterClass={currentClass} key={i} />
     })
@@ -41,7 +41,7 @@ export default class ChooseClass extends Component {
   render() {
     return (
       <div className='chooseClass'>
-        { this.classes() }
+        { this.getClasses() }
       </div>
     );
   }

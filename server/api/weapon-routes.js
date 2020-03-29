@@ -16,6 +16,6 @@ app.get('/weapon/:id', (req, res) => {
 
   Weapon.findById(id, (err, result) => {
     if (err) return res.status(500).send(err);
-    return res.send(200).send(result);
+    return res.status(200).send(result);
   });
 });

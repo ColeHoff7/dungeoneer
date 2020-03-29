@@ -6,7 +6,7 @@ import Spell from '../models/spell-model';
 app.get('/spell', (req, res) => {
   Spell.find((err, results) => {
     if (err) return res.status(500).send(err);
-    return res.send(200).send(results);
+    return res.status(200).send(results);
   });
 });
 
@@ -16,6 +16,6 @@ app.get('/spell/:id', (req, res) => {
 
   Spell.findById(id, (err, result) => {
     if (err) return res.status(500).send(err);
-    return res.send(200).send(result);
+    return res.status(200).send(result);
   });
 });
