@@ -1,15 +1,31 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
+
+const styles = {
+  card: {
+    minWidth: 275,
+    maxWidth: 275,
+  },
+  title: {
+    fontSize: 14,
+  },
+  pos: {
+    marginBottom: 12,
+  },
+};
 
 const CharacterClass = props => (
   <div>
-    <input className="form-check-input"
-           type="radio"
-           name="classChoices"
-           id={props.characterClass.id}
-           value={props.characterClass.name}
-    />
-    <label className="form-check-label">{props.characterClass.name}</label><br/>
+    <Card className={styles.card}>
+      <CardContent>
+        <Typography className={styles.title}>
+          {props.characterClass.name}
+        </Typography>
+      </CardContent>
+    </Card>
   </div>
 )
 

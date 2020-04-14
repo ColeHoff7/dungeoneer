@@ -17,18 +17,6 @@ const styles = {
   },
 };
 
-// const Race = props => (
-//   <div>
-//     <input className="form-check-input"
-//            type="radio"
-//            name="raceChoices"
-//            id={props.race.id}
-//            value={props.race.name}
-//     />
-//     <label className="form-check-label">{props.race.name}</label><br/>
-//   </div>
-// )
-
 const Race = props => (
   <div>
     <Card className={styles.card}>
