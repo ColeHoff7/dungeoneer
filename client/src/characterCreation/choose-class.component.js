@@ -2,31 +2,21 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 
-const styles = {
-  card: {
-    minWidth: 275,
-    maxWidth: 275,
-  },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
-  },
-};
+import './character-creation.css';
 
 const CharacterClass = props => (
-  <div>
-    <Card className={styles.card}>
-      <CardContent>
-        <Typography className={styles.title}>
-          {props.characterClass.name}
-        </Typography>
-      </CardContent>
-    </Card>
-  </div>
+  <Grid
+    align='center'
+    justify='center'
+    direction='column'
+    xs={3}
+  >
+    <Paper className='paper' elevation={3} square>{props.characterClass.name}</Paper>
+  </Grid>
 )
 
 export default class ChooseClass extends Component {
@@ -56,9 +46,9 @@ export default class ChooseClass extends Component {
 
   render() {
     return (
-      <div className='chooseClass'>
+      <Grid container spacing={3}>
         { this.getClasses() }
-      </div>
+      </Grid>
     );
   }
 

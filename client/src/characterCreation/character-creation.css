@@ -1,0 +1,14 @@
+.grid {
+  align-items: center;
+}
+
+.paper {
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  justify-content: center;
+  margin: 20px;
+  padding: auto;
+  text-align: center;
+  width: 200px;
+}

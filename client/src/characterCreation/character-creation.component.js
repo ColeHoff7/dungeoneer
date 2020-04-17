@@ -62,7 +62,7 @@ export default function CharacterCreation() {
   };
 
   return (
-    
+
     <div className={classes.root}>
       <Tabs
         orientation="vertical"
@@ -72,38 +72,32 @@ export default function CharacterCreation() {
         aria-label="Vertical tabs example"
         className={classes.tabs}
       >
-  
+
         <Tab label="Race" {...a11yProps(0)} />
         <Tab label="Class" {...a11yProps(1)} />
         <Tab label="Ability Scores" {...a11yProps(2)} />
         <Tab label="Skills" {...a11yProps(3)} />
         <Tab label="Equipment" {...a11yProps(4)} />
         <Tab label="Background" {...a11yProps(5)} />
-      
+
       </Tabs>
       <TabPanel value={value} index={0}>
-        Race
         <ChooseRace/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Class
         <ChooseClass/>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Ability Scores
         <SetAbilityScores/>
       </TabPanel>
       <TabPanel value={value} index={3}>
-        Skills
         <ChooseSkills/>
       </TabPanel>
       <TabPanel value={value} index={4}>
-        Equipment
       </TabPanel>
       <TabPanel value={value} index={5}>
-        Background
       </TabPanel>
-        
+
 
     </div>
   );
