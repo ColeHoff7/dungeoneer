@@ -12,3 +12,8 @@
   text-align: center;
   width: 200px;
 }
+
+.ability-score-input {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}

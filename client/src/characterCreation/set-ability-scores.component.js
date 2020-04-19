@@ -1,22 +1,19 @@
 import React, { Component } from 'react';
+import TextField from '@material-ui/core/TextField';
+
+import './character-creation.css';
 
 export default class SetAbilityScores extends Component {
 
   render() {
     return (
       <div className='setAbilityScores'>
-        <label className="form-check-label">Strength</label>&nbsp;&nbsp;
-        <input type="number" name="quantity" min="-5" max="15" placeholder="0" /><br/>
-        <label className="form-check-label">Dexterity</label>&nbsp;&nbsp;
-        <input type="number" name="quantity" min="-5" max="15" placeholder="0" /><br/>
-        <label className="form-check-label">Constitution</label>&nbsp;&nbsp;
-        <input type="number" name="quantity" min="-5" max="15" placeholder="0" /><br/>
-        <label className="form-check-label">Intelligence</label>&nbsp;&nbsp;
-        <input type="number" name="quantity" min="-5" max="15" placeholder="0" /><br/>
-        <label className="form-check-label">Wisdom</label>&nbsp;&nbsp;
-        <input type="number" name="quantity" min="-5" max="15" placeholder="0" /><br/>
-        <label className="form-check-label">Charisma</label>&nbsp;&nbsp;
-        <input type="number" name="quantity" min="-5" max="15" placeholder="0" /><br/>
+        <TextField className="ability-score-input" id="strengthScore" label="Strength" variant="outlined" defaultValue="0" /><br/><br/>
+        <TextField className="ability-score-input" id="dexterityScore" label="Dexterity" variant="outlined" defaultValue="0" /><br/><br/>
+        <TextField className="ability-score-input" id="constitutionScore" label="Constitution" variant="outlined" defaultValue="0" /><br/><br/>
+        <TextField className="ability-score-input" id="intelligenceScore" label="Intelligence" variant="outlined" defaultValue="0" /><br/><br/>
+        <TextField className="ability-score-input" id="wisdomScore" label="Wisdom" variant="outlined" defaultValue="0" /><br/><br/>
+        <TextField className="ability-score-input" id="charismaScore" label="Charisma" variant="outlined" defaultValue="0" />
       </div>
     );
   }
