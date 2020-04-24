@@ -3,19 +3,9 @@ import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 
-export default class ChooseSkills extends Component {
+import './character-creation.css';
 
-  render() {
-    return (
-      <div>
-        <SkillCheckboxes />
-      </div>
-    );
-  }
-
-}
-
-function SkillCheckboxes() {
+export default function Skills() {
   const [state, setState] = React.useState({
     checkedAcrobatics: false,
     checkedAnimalHandling: false,

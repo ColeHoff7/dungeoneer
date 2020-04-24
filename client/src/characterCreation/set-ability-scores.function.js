@@ -1,21 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import FormGroup from '@material-ui/core/FormGroup';
 
 import './character-creation.css';
 
-export default class SetAbilityScores extends Component {
-
-  render() {
-    return (
-      <div className='setAbilityScores'>
-        <AbilityScoreFields />
-      </div>
-    );
-  }
-}
-
-function AbilityScoreFields() {
+export default function AbilityScores() {
   return (
     <FormGroup row>
       <FormGroup>
