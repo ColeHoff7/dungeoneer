@@ -4,7 +4,7 @@ import FormGroup from '@material-ui/core/FormGroup';
 
 import './character-creation.css';
 
-export default function AbilityScores() {
+export default function AbilityScores(props) {
   return (
     <FormGroup row>
       <FormGroup>
@@ -14,6 +14,7 @@ export default function AbilityScores() {
           label="Strength"
           variant="outlined"
           defaultValue="0"
+          onBlur={(e) => props.onAbilityScoresChange("strength", e)}
         />
         <TextField
           className="ability-score-input"
@@ -21,6 +22,7 @@ export default function AbilityScores() {
           label="Dexterity"
           variant="outlined"
           defaultValue="0"
+          onBlur={(e) => props.onAbilityScoresChange("dexterity", e)}
         />
         <TextField
           className="ability-score-input"
@@ -28,6 +30,7 @@ export default function AbilityScores() {
           label="Constitution"
           variant="outlined"
           defaultValue="0"
+          onBlur={(e) => props.onAbilityScoresChange("constitution", e)}
         />
       </FormGroup>
       <FormGroup>
@@ -37,6 +40,7 @@ export default function AbilityScores() {
         label="Intelligence"
         variant="outlined"
         defaultValue="0"
+        onBlur={(e) => props.onAbilityScoresChange("intelligence", e)}
       />
       <TextField
         className="ability-score-input"
@@ -44,6 +48,7 @@ export default function AbilityScores() {
         label="Wisdom"
         variant="outlined"
         defaultValue="0"
+        onBlur={(e) => props.onAbilityScoresChange("wisdom", e)}
       />
       <TextField
         className="ability-score-input"
@@ -51,6 +56,7 @@ export default function AbilityScores() {
         label="Charisma"
         variant="outlined"
         defaultValue="0"
+        onBlur={(e) => props.onAbilityScoresChange("charisma", e)}
       />
       </FormGroup>
     </FormGroup>

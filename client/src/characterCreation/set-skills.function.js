@@ -5,30 +5,32 @@ import Checkbox from '@material-ui/core/Checkbox';
 
 import './character-creation.css';
 
-export default function Skills() {
+export default function Skills(props) {
   const [state, setState] = React.useState({
-    checkedAcrobatics: false,
-    checkedAnimalHandling: false,
-    checkedArcana: false,
-    checkedAthletics: false,
-    checkedDeception: false,
-    checkedHistory: false,
-    checkedInsight: false,
-    checkedIntimidation: false,
-    checkedInvestigation: false,
-    checkedMedicine: false,
-    checkedNature: false,
-    checkedPerception: false,
-    checkedPerformance: false,
-    checkedPersuation: false,
-    checkedReligion: false,
-    checkedSlightOfHand: false,
-    checkedStealth: false,
-    checkedSurvival: false,
+    acrobatics: false,
+    animalHandling: false,
+    arcana: false,
+    athletics: false,
+    deception: false,
+    history: false,
+    insight: false,
+    intimidation: false,
+    investigation: false,
+    medicine: false,
+    nature: false,
+    perception: false,
+    performance: false,
+    persuation: false,
+    religion: false,
+    slightOfHand: false,
+    stealth: false,
+    survival: false,
   });
 
   const handleChange = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
+
+    props.onChange(event.target.name, event.target.checked);
   };
 
   return (
@@ -37,9 +39,9 @@ export default function Skills() {
         <FormControlLabel
           control={
             <Checkbox
-              checked={state.checkedAcrobatics}
+              checked={state.acrobatics}
               onChange={handleChange}
-              name="checkedAcrobatics"
+              name="acrobatics"
               color="primary"
             />
           }
@@ -48,9 +50,9 @@ export default function Skills() {
         <FormControlLabel
           control={
             <Checkbox
-              checked={state.checkedAnimalHandling}
+              checked={state.animalHandling}
               onChange={handleChange}
-              name="checkedAnimalHandling"
+              name="animalHandling"
               color="primary"
             />
           }
@@ -59,9 +61,9 @@ export default function Skills() {
         <FormControlLabel
           control={
             <Checkbox
-              checked={state.checkedArcana}
+              checked={state.arcana}
               onChange={handleChange}
-              name="checkedArcana"
+              name="arcana"
               color="primary"
             />
           }
@@ -70,9 +72,9 @@ export default function Skills() {
         <FormControlLabel
           control={
             <Checkbox
-              checked={state.checkedAthletics}
+              checked={state.athletics}
               onChange={handleChange}
-              name="checkedAthletics"
+              name="athletics"
               color="primary"
             />
           }
@@ -81,9 +83,9 @@ export default function Skills() {
         <FormControlLabel
           control={
             <Checkbox
-              checked={state.checkedDeception}
+              checked={state.deception}
               onChange={handleChange}
-              name="checkedDeception"
+              name="deception"
               color="primary"
             />
           }
@@ -92,9 +94,9 @@ export default function Skills() {
         <FormControlLabel
           control={
             <Checkbox
-              checked={state.checkedHistory}
+              checked={state.history}
               onChange={handleChange}
-              name="checkedHistory"
+              name="history"
               color="primary"
             />
           }
@@ -105,9 +107,9 @@ export default function Skills() {
         <FormControlLabel
           control={
             <Checkbox
-              checked={state.checkedInsight}
+              checked={state.insight}
               onChange={handleChange}
-              name="checkedInsight"
+              name="insight"
               color="primary"
             />
           }
@@ -116,9 +118,9 @@ export default function Skills() {
         <FormControlLabel
           control={
             <Checkbox
-              checked={state.checkedIntimidation}
+              checked={state.intimidation}
               onChange={handleChange}
-              name="checkedIntimidation"
+              name="intimidation"
               color="primary"
             />
           }
@@ -127,9 +129,9 @@ export default function Skills() {
         <FormControlLabel
           control={
             <Checkbox
-              checked={state.checkedInvestigation}
+              checked={state.investigation}
               onChange={handleChange}
-              name="checkedInvestigation"
+              name="investigation"
               color="primary"
             />
           }
@@ -138,9 +140,9 @@ export default function Skills() {
         <FormControlLabel
           control={
             <Checkbox
-              checked={state.checkedMedicine}
+              checked={state.medicine}
               onChange={handleChange}
-              name="checkedMedicine"
+              name="medicine"
               color="primary"
             />
           }
@@ -149,9 +151,9 @@ export default function Skills() {
         <FormControlLabel
           control={
             <Checkbox
-              checked={state.checkedNature}
+              checked={state.nature}
               onChange={handleChange}
-              name="checkedNature"
+              name="nature"
               color="primary"
             />
           }
@@ -160,9 +162,9 @@ export default function Skills() {
         <FormControlLabel
           control={
             <Checkbox
-              checked={state.checkedPerception}
+              checked={state.perception}
               onChange={handleChange}
-              name="checkedPerception"
+              name="perception"
               color="primary"
             />
           }
@@ -173,9 +175,9 @@ export default function Skills() {
         <FormControlLabel
           control={
             <Checkbox
-              checked={state.checkedPerformance}
+              checked={state.performance}
               onChange={handleChange}
-              name="checkedPerformance"
+              name="performance"
               color="primary"
             />
           }
@@ -184,9 +186,9 @@ export default function Skills() {
         <FormControlLabel
           control={
             <Checkbox
-              checked={state.checkedPersuation}
+              checked={state.persuation}
               onChange={handleChange}
-              name="checkedPersuation"
+              name="persuation"
               color="primary"
             />
           }
@@ -195,9 +197,9 @@ export default function Skills() {
         <FormControlLabel
           control={
             <Checkbox
-              checked={state.checkedReligion}
+              checked={state.religion}
               onChange={handleChange}
-              name="checkedReligion"
+              name="religion"
               color="primary"
             />
           }
@@ -206,9 +208,9 @@ export default function Skills() {
         <FormControlLabel
           control={
             <Checkbox
-              checked={state.checkedSlightOfHand}
+              checked={state.slightOfHand}
               onChange={handleChange}
-              name="checkedSlightOfHand"
+              name="slightOfHand"
               color="primary"
             />
           }
@@ -217,9 +219,9 @@ export default function Skills() {
         <FormControlLabel
           control={
             <Checkbox
-              checked={state.checkedStealth}
+              checked={state.stealth}
               onChange={handleChange}
-              name="checkedStealth"
+              name="stealth"
               color="primary"
             />
           }
@@ -228,9 +230,9 @@ export default function Skills() {
         <FormControlLabel
           control={
             <Checkbox
-              checked={state.checkedSurvival}
+              checked={state.survival}
               onChange={handleChange}
-              name="checkedSurvival"
+              name="survival"
               color="primary"
             />
           }
