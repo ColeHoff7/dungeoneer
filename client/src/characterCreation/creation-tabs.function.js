@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
@@ -9,6 +10,8 @@ import CharacterRaces from './set-character-race.function';
 import CharacterClasses from './set-character-class.function';
 import Skills from './set-skills.function';
 import AbilityScores from './set-ability-scores.function';
+import Equipment from './set-equipment.function';
+import BackgroundInfo from './set-background-info.function';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -79,6 +82,7 @@ export default function CreationTabs(props) {
         <Tab label="Skills" {...a11yProps(3)} />
         <Tab label="Equipment" {...a11yProps(4)} />
         <Tab label="Background" {...a11yProps(5)} />
+        <Tab label="Review & Complete" {...a11yProps(6)} />
 
       </Tabs>
       <TabPanel value={value} index={0}>
@@ -94,11 +98,13 @@ export default function CreationTabs(props) {
         <Skills onChange={props.onSkillsChange} />
       </TabPanel>
       <TabPanel value={value} index={4}>
+        <Equipment />
       </TabPanel>
       <TabPanel value={value} index={5}>
+        <BackgroundInfo />
       </TabPanel>
-
-
+      <TabPanel value={value} index={6}>
+      </TabPanel>
     </div>
   );
 }
