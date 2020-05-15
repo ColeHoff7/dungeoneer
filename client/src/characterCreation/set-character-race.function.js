@@ -1,44 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
 import ButtonBase from '@material-ui/core/ButtonBase';
-import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-
-//<Paper className='paper' elevation={3} square onClick={props.onRaceChange}>{props.characterRace.name}</Paper>
-
-// const CharacterRace = props => (
-//   <Grid container
-//     align='center'
-//     justify='center'
-//     direction='column'
-//     xs={4}
-//   >
-//     <Button
-//       variant='contained'
-//       color='primary'
-//       onClick={(e) => props.onChange(props.characterRace.name)}
-//     >
-//       {props.characterRace.name}
-//     </Button>
-//   </Grid>
-// )
-
-// const CharacterRace = props => (
-//   <ButtonBase
-//     focusRipple
-//     key={props.characterRace.name}
-//   >
-//     <span>{props.characterRace.name}</span>
-//   </ButtonBase>
-// )
-
-// function getCharacterRaces(characterRaces, onChange) {
-//   return characterRaces.map((currentRace, i) => {
-//     return <CharacterRace characterRace={currentRace} key={i} onChange={onChange} />
-//   });
-// }
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -119,11 +82,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function CharacterRaces(props) {
-  // return (
-  //   <Grid container spacing={1}>
-  //     { getCharacterRaces(props.characterRaces, props.onChange) }
-  //   </Grid>
-  // );
   const classes = useStyles();
 
   return (
