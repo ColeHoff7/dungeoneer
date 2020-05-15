@@ -1,64 +1,81 @@
 import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import FormGroup from '@material-ui/core/FormGroup';
 
 import './character-creation.css';
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    minWidth: 300,
+    width: '100%',
+  },
+  textField: {
+    margin: '10%',
+  },
+}))
+
 export default function AbilityScores(props) {
+  const classes = useStyles();
+
   return (
-    <FormGroup row>
-      <FormGroup>
+    <div className={classes.root}>
+      <FormGroup row>
+        <FormGroup>
+          <TextField
+            className={classes.textField}
+            id="strengthScore"
+            label="Strength"
+            variant="outlined"
+            defaultValue="0"
+            onBlur={(e) => props.onAbilityScoresChange("strength", e)}
+          />
+          <TextField
+            className={classes.textField}
+            id="dexterityScore"
+            label="Dexterity"
+            variant="outlined"
+            defaultValue="0"
+            onBlur={(e) => props.onAbilityScoresChange("dexterity", e)}
+          />
+          <TextField
+            className={classes.textField}
+            id="constitutionScore"
+            label="Constitution"
+            variant="outlined"
+            defaultValue="0"
+            onBlur={(e) => props.onAbilityScoresChange("constitution", e)}
+          />
+        </FormGroup>
+        <FormGroup>
         <TextField
-          className="ability-score-input"
-          id="strengthScore"
-          label="Strength"
+          className={classes.textField}
+          id="intelligenceScore"
+          label="Intelligence"
           variant="outlined"
           defaultValue="0"
-          onBlur={(e) => props.onAbilityScoresChange("strength", e)}
+          onBlur={(e) => props.onAbilityScoresChange("intelligence", e)}
         />
         <TextField
-          className="ability-score-input"
-          id="dexterityScore"
-          label="Dexterity"
+          className={classes.textField}
+          id="wisdomScore"
+          label="Wisdom"
           variant="outlined"
           defaultValue="0"
-          onBlur={(e) => props.onAbilityScoresChange("dexterity", e)}
+          onBlur={(e) => props.onAbilityScoresChange("wisdom", e)}
         />
         <TextField
-          className="ability-score-input"
-          id="constitutionScore"
-          label="Constitution"
+          className={classes.textField}
+          id="charismaScore"
+          label="Charisma"
           variant="outlined"
           defaultValue="0"
-          onBlur={(e) => props.onAbilityScoresChange("constitution", e)}
+          onBlur={(e) => props.onAbilityScoresChange("charisma", e)}
         />
+        </FormGroup>
       </FormGroup>
-      <FormGroup>
-      <TextField
-        className="ability-score-input"
-        id="intelligenceScore"
-        label="Intelligence"
-        variant="outlined"
-        defaultValue="0"
-        onBlur={(e) => props.onAbilityScoresChange("intelligence", e)}
-      />
-      <TextField
-        className="ability-score-input"
-        id="wisdomScore"
-        label="Wisdom"
-        variant="outlined"
-        defaultValue="0"
-        onBlur={(e) => props.onAbilityScoresChange("wisdom", e)}
-      />
-      <TextField
-        className="ability-score-input"
-        id="charismaScore"
-        label="Charisma"
-        variant="outlined"
-        defaultValue="0"
-        onBlur={(e) => props.onAbilityScoresChange("charisma", e)}
-      />
-      </FormGroup>
-    </FormGroup>
+    </div>
   )
 }

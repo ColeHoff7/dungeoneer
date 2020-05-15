@@ -52,7 +52,10 @@ const useStyles = makeStyles(theme => ({
   },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
-    width: 250,
+    width: '15%',
+  },
+  tabPanel: {
+    width: '85%'
   },
 }));
 
@@ -85,25 +88,25 @@ export default function CreationTabs(props) {
         <Tab label="Review & Complete" {...a11yProps(6)} />
 
       </Tabs>
-      <TabPanel value={value} index={0}>
+      <TabPanel className={classes.tabPanel} value={value} index={0}>
         <CharacterRaces characterRaces={props.characterRaces} onChange={props.onRaceChange} />
       </TabPanel>
-      <TabPanel value={value} index={1}>
+      <TabPanel className={classes.tabPanel} value={value} index={1}>
         <CharacterClasses characterClasses={props.characterClasses} onChange={props.onClassChange} />
       </TabPanel>
-      <TabPanel value={value} index={2}>
+      <TabPanel className={classes.tabPanel} value={value} index={2}>
         <AbilityScores onAbilityScoresChange={props.onAbilityScoresChange} />
       </TabPanel>
-      <TabPanel value={value} index={3}>
+      <TabPanel className={classes.tabPanel} value={value} index={3}>
         <Skills onChange={props.onSkillsChange} />
       </TabPanel>
-      <TabPanel value={value} index={4}>
+      <TabPanel className={classes.tabPanel} value={value} index={4}>
         <Equipment />
       </TabPanel>
-      <TabPanel value={value} index={5}>
+      <TabPanel className={classes.tabPanel} value={value} index={5}>
         <BackgroundInfo />
       </TabPanel>
-      <TabPanel value={value} index={6}>
+      <TabPanel className={classes.tabPanel} value={value} index={6}>
       </TabPanel>
     </div>
   );
