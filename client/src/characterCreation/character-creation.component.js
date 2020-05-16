@@ -15,12 +15,12 @@ export default class CharacterCreation extends Component {
       currClass: "",
       currRace: "",
       currAbilityScores: {
-        "strength": "0",
-        "dexterity": "0",
-        "constitution": "0",
-        "intelligence": "0",
-        "wisdom": "0",
-        "charisma": "0"
+        "strength": 0,
+        "dexterity": 0,
+        "constitution": 0,
+        "intelligence": 0,
+        "wisdom": 0,
+        "charisma": 0
       },
       currSkills: []
     }
@@ -52,9 +52,9 @@ export default class CharacterCreation extends Component {
     this.setState({ currRace: characterRaceName });
   };
 
-  onAbilityScoresChange = (abilityName, e) => {
+  onAbilityScoresChange = (abilityName, value) => {
     var updatedAbilityScores = this.state.currAbilityScores;
-    updatedAbilityScores[abilityName] = e.target.value;
+    updatedAbilityScores[abilityName] = value;
 
     this.setState({ currAbilityScores: updatedAbilityScores });
   };
