@@ -38,6 +38,23 @@ const useStyles = makeStyles((theme) => ({
       },
     },
   },
+  selectedRace: {
+    position: 'relative',
+    height: 200,
+    width: 400,
+    margin: 'auto',
+    marginTop: 20,
+    zIndex: 1,
+    '& $backdrop': {
+      opacity: 0.15,
+    },
+    '& $marked': {
+      opacity: 0,
+    },
+    '& $title': {
+      border: '4px solid currentColor',
+    },
+  },
   button: {
     position: 'absolute',
     left: 0,
@@ -93,7 +110,7 @@ export default function CharacterRaces(props) {
         <ButtonBase
           focusRipple
           key={characterRace.name}
-          className={classes.buttonBase}
+          className={characterRace.name === props.currRace ? classes.selectedRace : classes.buttonBase}
           style={{backgroundColor: characterRace.color}}
           focusVisibleClassName={classes.focusVisible}
           onClick={(e) => props.onChange(characterRace.name)}

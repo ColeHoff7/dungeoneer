@@ -29,7 +29,7 @@ export default function AbilityScores(props) {
             id="strengthScore"
             label="Strength"
             variant="outlined"
-            defaultValue="0"
+            defaultValue={props.currAbilityScores.strength}
             onBlur={(e) => props.onAbilityScoresChange("strength", e)}
           />
           <TextField
@@ -37,7 +37,7 @@ export default function AbilityScores(props) {
             id="dexterityScore"
             label="Dexterity"
             variant="outlined"
-            defaultValue="0"
+            defaultValue={props.currAbilityScores.dexterity}
             onBlur={(e) => props.onAbilityScoresChange("dexterity", e)}
           />
           <TextField
@@ -45,7 +45,7 @@ export default function AbilityScores(props) {
             id="constitutionScore"
             label="Constitution"
             variant="outlined"
-            defaultValue="0"
+            defaultValue={props.currAbilityScores.constitution}
             onBlur={(e) => props.onAbilityScoresChange("constitution", e)}
           />
         </FormGroup>
@@ -55,7 +55,7 @@ export default function AbilityScores(props) {
           id="intelligenceScore"
           label="Intelligence"
           variant="outlined"
-          defaultValue="0"
+          defaultValue={props.currAbilityScores.intelligence}
           onBlur={(e) => props.onAbilityScoresChange("intelligence", e)}
         />
         <TextField
@@ -63,7 +63,7 @@ export default function AbilityScores(props) {
           id="wisdomScore"
           label="Wisdom"
           variant="outlined"
-          defaultValue="0"
+          defaultValue={props.currAbilityScores.wisdom}
           onBlur={(e) => props.onAbilityScoresChange("wisdom", e)}
         />
         <TextField
@@ -71,7 +71,7 @@ export default function AbilityScores(props) {
           id="charismaScore"
           label="Charisma"
           variant="outlined"
-          defaultValue="0"
+          defaultValue={props.currAbilityScores.charisma}
           onBlur={(e) => props.onAbilityScoresChange("charisma", e)}
         />
         </FormGroup>

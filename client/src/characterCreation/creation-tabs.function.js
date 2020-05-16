@@ -90,16 +90,29 @@ export default function CreationTabs(props) {
 
       </Tabs>
       <TabPanel className={classes.tabPanel} value={value} index={0}>
-        <CharacterRaces currRace={props.currRace} characterRaces={props.characterRaces} onChange={props.onRaceChange} />
+        <CharacterRaces
+          currRace={props.currRace}
+          characterRaces={props.characterRaces}
+          onChange={props.onRaceChange}
+        />
       </TabPanel>
       <TabPanel className={classes.tabPanel} value={value} index={1}>
-        <CharacterClasses characterClasses={props.characterClasses} onChange={props.onClassChange} />
+        <CharacterClasses
+          currClass={props.currClass}
+          characterClasses={props.characterClasses}
+          onChange={props.onClassChange}
+        />
       </TabPanel>
       <TabPanel className={classes.tabPanel} value={value} index={2}>
-        <AbilityScores onAbilityScoresChange={props.onAbilityScoresChange} />
+        <AbilityScores
+          currAbilityScores={props.currAbilityScores}
+          onAbilityScoresChange={props.onAbilityScoresChange} />
       </TabPanel>
       <TabPanel className={classes.tabPanel} value={value} index={3}>
-        <Skills onChange={props.onSkillsChange} />
+        <Skills
+          currSkills={props.currSkills}
+          onChange={props.onSkillsChange}
+        />
       </TabPanel>
       <TabPanel className={classes.tabPanel} value={value} index={4}>
         <Equipment />

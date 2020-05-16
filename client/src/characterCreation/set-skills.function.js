@@ -5,26 +5,32 @@ import Checkbox from '@material-ui/core/Checkbox';
 
 import './character-creation.css';
 
+const _ = require('lodash');
+
+function skillSelected(skills, skill) {
+  return _.indexOf(skills, skill) > -1;
+}
+
 export default function Skills(props) {
   const [state, setState] = React.useState({
-    acrobatics: false,
-    animalHandling: false,
-    arcana: false,
-    athletics: false,
-    deception: false,
-    history: false,
-    insight: false,
-    intimidation: false,
-    investigation: false,
-    medicine: false,
-    nature: false,
-    perception: false,
-    performance: false,
-    persuation: false,
-    religion: false,
-    slightOfHand: false,
-    stealth: false,
-    survival: false,
+    acrobatics: skillSelected(props.currSkills, 'acrobatics'),
+    animalHandling: skillSelected(props.currSkills, 'animalHandling'),
+    arcana: skillSelected(props.currSkills, 'arcana'),
+    athletics: skillSelected(props.currSkills, 'athletics'),
+    deception: skillSelected(props.currSkills, 'deception'),
+    history: skillSelected(props.currSkills, 'history'),
+    insight: skillSelected(props.currSkills, 'insight'),
+    intimidation: skillSelected(props.currSkills, 'intimidation'),
+    investigation: skillSelected(props.currSkills, 'investigation'),
+    medicine: skillSelected(props.currSkills, 'medicine'),
+    nature: skillSelected(props.currSkills, 'nature'),
+    perception: skillSelected(props.currSkills, 'perception'),
+    performance: skillSelected(props.currSkills, 'performance'),
+    persuation: skillSelected(props.currSkills, 'persuation'),
+    religion: skillSelected(props.currSkills, 'religion'),
+    slightOfHand: skillSelected(props.currSkills, 'slightOfHand'),
+    stealth: skillSelected(props.currSkills, 'stealth'),
+    survival: skillSelected(props.currSkills, 'survival'),
   });
 
   const handleChange = (event) => {
