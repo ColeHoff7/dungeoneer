@@ -10,12 +10,9 @@ const useStyles = makeStyles((theme) => ({
     minWidth: 300,
     width: '100%',
   },
-  selectedRace: {
-    borderSize: '2px',
-    borderColor: 'white',
-  },
   focusVisible: {},
   buttonBase: {
+    backgroundColor: '#858282',
     position: 'relative',
     height: 200,
     width: 400,
@@ -83,7 +80,7 @@ const useStyles = makeStyles((theme) => ({
     top: 0,
     bottom: 0,
     backgroundColor: theme.palette.common.black,
-    opacity: 0.4,
+    opacity: 0.8,
     transition: theme.transitions.create('opacity'),
   },
   title: {

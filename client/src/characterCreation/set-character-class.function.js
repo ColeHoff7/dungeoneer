@@ -8,11 +8,12 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexWrap: 'wrap',
     minWidth: 300,
+    height: '100%',
     width: '100%',
   },
   focusVisible: {},
   buttonBase: {
-    backgroundColor: '#858282',
+    backgroundColor: '#3442d9',
     position: 'relative',
     height: 200,
     width: 400,
@@ -36,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   selectedClass: {
-    backgroundColor: '#858282',
+    backgroundColor: '#3442d9',
     position: 'relative',
     height: 200,
     width: 400,
@@ -81,7 +82,7 @@ const useStyles = makeStyles((theme) => ({
     top: 0,
     bottom: 0,
     backgroundColor: theme.palette.common.black,
-    opacity: 0.4,
+    opacity: 0.8,
     transition: theme.transitions.create('opacity'),
   },
   title: {
