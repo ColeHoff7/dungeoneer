@@ -10,9 +10,12 @@ const useStyles = makeStyles((theme) => ({
     minWidth: 300,
     width: '100%',
   },
+  selectedRace: {
+    borderSize: '2px',
+    borderColor: 'white',
+  },
   focusVisible: {},
   buttonBase: {
-    backgroundColor: '#3486eb',
     position: 'relative',
     height: 200,
     width: 400,
@@ -24,13 +27,13 @@ const useStyles = makeStyles((theme) => ({
     },
     '&:hover, &$focusVisible': {
       zIndex: 1,
-      '& $imageBackdrop': {
+      '& $backdrop': {
         opacity: 0.15,
       },
-      '& $imageMarked': {
+      '& $marked': {
         opacity: 0,
       },
-      '& $imageTitle': {
+      '& $title': {
         border: '4px solid currentColor',
       },
     },
@@ -91,6 +94,7 @@ export default function CharacterRaces(props) {
           focusRipple
           key={characterRace.name}
           className={classes.buttonBase}
+          style={{backgroundColor: characterRace.color}}
           focusVisibleClassName={classes.focusVisible}
           onClick={(e) => props.onChange(characterRace.name)}
         >

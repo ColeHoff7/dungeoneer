@@ -12,6 +12,7 @@ import Skills from './set-skills.function';
 import AbilityScores from './set-ability-scores.function';
 import Equipment from './set-equipment.function';
 import BackgroundInfo from './set-background-info.function';
+import ReviewCharacter from './review-character.function';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -89,7 +90,7 @@ export default function CreationTabs(props) {
 
       </Tabs>
       <TabPanel className={classes.tabPanel} value={value} index={0}>
-        <CharacterRaces characterRaces={props.characterRaces} onChange={props.onRaceChange} />
+        <CharacterRaces currRace={props.currRace} characterRaces={props.characterRaces} onChange={props.onRaceChange} />
       </TabPanel>
       <TabPanel className={classes.tabPanel} value={value} index={1}>
         <CharacterClasses characterClasses={props.characterClasses} onChange={props.onClassChange} />
@@ -107,6 +108,12 @@ export default function CreationTabs(props) {
         <BackgroundInfo />
       </TabPanel>
       <TabPanel className={classes.tabPanel} value={value} index={6}>
+        <ReviewCharacter
+          currClass={props.currClass}
+          currRace={props.currRace}
+          currAbilityScores={props.currAbilityScores}
+          currSkills={props.currSkills}
+        />
       </TabPanel>
     </div>
   );

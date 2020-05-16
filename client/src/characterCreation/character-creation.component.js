@@ -77,6 +77,10 @@ export default class CharacterCreation extends Component {
           onRaceChange={this.onRaceChange}
           onAbilityScoresChange={this.onAbilityScoresChange}
           onSkillsChange={this.onSkillsChange}
+          currClass={this.state.currClass}
+          currRace={this.state.currRace}
+          currAbilityScores={this.state.currAbilityScores}
+          currSkills={this.state.currSkills}
         />
       </div>
     )

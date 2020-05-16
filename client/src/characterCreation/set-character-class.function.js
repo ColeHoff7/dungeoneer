@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
   },
   focusVisible: {},
   buttonBase: {
-    backgroundColor: '#3486eb',
+    backgroundColor: '#858282',
     position: 'relative',
     height: 200,
     width: 400,
@@ -24,13 +24,13 @@ const useStyles = makeStyles((theme) => ({
     },
     '&:hover, &$focusVisible': {
       zIndex: 1,
-      '& $imageBackdrop': {
+      '& $backdrop': {
         opacity: 0.15,
       },
-      '& $imageMarked': {
+      '& $marked': {
         opacity: 0,
       },
-      '& $imageTitle': {
+      '& $title': {
         border: '4px solid currentColor',
       },
     },

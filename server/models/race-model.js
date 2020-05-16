@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 const RaceSchema = new Schema({
     id: String,
     name: String,
+    color: String,
     description: String,
     common_names: Object,
     traits: Object,
