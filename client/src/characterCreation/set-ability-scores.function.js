@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
   buttonGroup: {
     margin: 'auto',
   },
-}))
+}));
 
 export default function AbilityScores(props) {
   const classes = useStyles();
