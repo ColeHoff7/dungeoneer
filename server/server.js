@@ -18,6 +18,7 @@ var raceRoutes = require('./api/race-routes');
 var spellRoutes = require('./api/spell-routes');
 var weaponRoutes = require('./api/weapon-routes');
 var classRoutes = require('./api/class-routes');
+var skillRoutes = require('./api/skill-routes');
 
 // set our port to either a predetermined port number if you have set it up, or 3001
 const API_PORT = process.env.API_PORT || 3001;
@@ -47,6 +48,6 @@ router.get('/', (req, res) => {
 app.use('/api', router);
 
 // adding api endpoints to app object
-app.use('/api', router, armorRoutes, itemRoutes, raceRoutes, spellRoutes, weaponRoutes, classRoutes);
+app.use('/api', router, armorRoutes, itemRoutes, raceRoutes, spellRoutes, weaponRoutes, classRoutes, skillRoutes);
 
 app.listen(API_PORT, () => console.log(`Listening on port ${API_PORT}`));

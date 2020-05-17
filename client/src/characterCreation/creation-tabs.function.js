@@ -112,6 +112,7 @@ export default function CreationTabs(props) {
       </TabPanel>
       <TabPanel className={classes.tabPanel} value={value} index={3}>
         <Skills
+          characterSkills={props.characterSkills}
           currSkills={props.currSkills}
           onChange={props.onSkillsChange}
         />

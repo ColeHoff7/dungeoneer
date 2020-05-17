@@ -12,6 +12,7 @@ export default class CharacterCreation extends Component {
     this.state = {
       characterClasses: [],
       characterRaces: [],
+      characterSkills: [],
       currClass: "",
       currRace: "",
       currAbilityScores: {
@@ -38,6 +39,14 @@ export default class CharacterCreation extends Component {
     axios.get('http://localhost:3001/api/race')
       .then(response => {
         this.setState({ characterRaces: response.data });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+
+    axios.get('http://localhost:3001/api/skill')
+      .then(response => {
+        this.setState({ characterSkills: response.data });
       })
       .catch(error => {
         console.log(error);
@@ -73,6 +82,7 @@ export default class CharacterCreation extends Component {
         <CreationTabs
           characterClasses={this.state.characterClasses}
           characterRaces={this.state.characterRaces}
+          characterSkills={this.state.characterSkills}
           onClassChange={this.onClassChange}
           onRaceChange={this.onRaceChange}
           onAbilityScoresChange={this.onAbilityScoresChange}
