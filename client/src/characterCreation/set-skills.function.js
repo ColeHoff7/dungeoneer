@@ -1,13 +1,6 @@
 import React, { Component } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import FormGroup from '@material-ui/core/FormGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
 
@@ -26,13 +19,12 @@ const useStyles = makeStyles((theme) => ({
   focusVisible: {},
   skillGrid: {
     height: '15vh',
-    alignItems: 'center',
   },
   skillButton: {
     backgroundColor: '#3442d9',
     position: 'relative',
-    width: '50%',
-    height: '80%',
+    width: '100%',
+    height: '100%',
     [theme.breakpoints.down('xs')]: {
       width: '100% !important', // Overrides inline-style
       height: 100,
@@ -47,8 +39,8 @@ const useStyles = makeStyles((theme) => ({
   selectedSkill: {
     backgroundColor: '#3442d9',
     position: 'relative',
-    width: '50%',
-    height: '80%',
+    width: '100%',
+    height: '100%',
     zIndex: 1,
     '& $backdrop': {
       opacity: 0.15,
@@ -111,7 +103,7 @@ export default function Skills(props) {
               <span className={classes.button}>
                 <Typography
                   component="span"
-                  variant="subtitle1"
+                  variant="h6"
                   color="inherit"
                 >
                   {characterSkill.name}

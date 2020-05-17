@@ -1,5 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
 
@@ -12,13 +13,15 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
   },
   focusVisible: {},
+  classGrid: {
+    height: '21vh',
+  },
   buttonBase: {
     backgroundColor: '#3442d9',
     position: 'relative',
-    height: 200,
-    width: 400,
+    height: '100%',
+    width: '100%',
     margin: 'auto',
-    marginTop: 20,
     [theme.breakpoints.down('xs')]: {
       width: '100% !important', // Overrides inline-style
       height: 100,
@@ -39,10 +42,9 @@ const useStyles = makeStyles((theme) => ({
   selectedClass: {
     backgroundColor: '#3442d9',
     position: 'relative',
-    height: 200,
-    width: 400,
+    height: '100%',
+    width: '100%',
     margin: 'auto',
-    marginTop: 20,
     zIndex: 1,
     '& $backdrop': {
       opacity: 0.15,
@@ -105,29 +107,33 @@ export default function CharacterClasses(props) {
 
   return (
     <div className={classes.root}>
+      <Grid container spacing={3} justify="center">
       {props.characterClasses.map((characterClass) => (
-        <ButtonBase
-          focusRipple
-          key={characterClass.name}
-          className={characterClass.name === props.currClass ? classes.selectedClass : classes.buttonBase}
-          focusVisibleClassName={classes.focusVisible}
-          onClick={(e) => props.onChange(characterClass.name)}
-        >
-          <span className={classes.buttonBackground} />
-          <span className={classes.backdrop} />
-          <span className={classes.button}>
-            <Typography
-              component="span"
-              variant="subtitle1"
-              color="inherit"
-              className={classes.title}
-            >
-              {characterClass.name}
-              <span className={classes.marked} />
-            </Typography>
-          </span>
-        </ButtonBase>
+        <Grid className={classes.classGrid} item xs={4} align="center">
+          <ButtonBase
+            focusRipple
+            key={characterClass.name}
+            className={characterClass.name === props.currClass ? classes.selectedClass : classes.buttonBase}
+            focusVisibleClassName={classes.focusVisible}
+            onClick={(e) => props.onChange(characterClass.name)}
+          >
+            <span className={classes.buttonBackground} />
+            <span className={classes.backdrop} />
+            <span className={classes.button}>
+              <Typography
+                component="span"
+                variant="h6"
+                color="inherit"
+                className={classes.title}
+              >
+                {characterClass.name}
+                <span className={classes.marked} />
+              </Typography>
+            </span>
+          </ButtonBase>
+        </Grid>
       ))}
+      </Grid>
     </div>
   )
 }
