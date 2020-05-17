@@ -8,6 +8,9 @@ import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 
+import ButtonBase from '@material-ui/core/ButtonBase';
+import Typography from '@material-ui/core/Typography';
+
 import './character-creation.css';
 
 const _ = require('lodash');
@@ -20,18 +23,67 @@ const useStyles = makeStyles((theme) => ({
     height: '100%',
     width: '100%',
   },
+  focusVisible: {},
   skillGrid: {
     height: '15vh',
+    alignItems: 'center',
   },
-  skillCard: {
-    margin: 'auto',
-    width: '50%',
-  },
-  selectedCard: {
+  skillButton: {
     backgroundColor: '#3442d9',
-    color: 'white',
-    margin: 'auto',
+    position: 'relative',
     width: '50%',
+    height: '80%',
+    [theme.breakpoints.down('xs')]: {
+      width: '100% !important', // Overrides inline-style
+      height: 100,
+    },
+    '&:hover, &$focusVisible': {
+      zIndex: 1,
+      '& $backdrop': {
+        opacity: 0.15,
+      }
+    },
+  },
+  selectedSkill: {
+    backgroundColor: '#3442d9',
+    position: 'relative',
+    width: '50%',
+    height: '80%',
+    zIndex: 1,
+    '& $backdrop': {
+      opacity: 0.15,
+    }
+  },
+  button: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    top: 0,
+    bottom: 0,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: theme.palette.common.white,
+  },
+  buttonBackground: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    top: 0,
+    bottom: 0,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center 40%',
+    color: 'red',
+  },
+  backdrop: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    top: 0,
+    bottom: 0,
+    backgroundColor: theme.palette.common.black,
+    opacity: 0.7,
+    transition: theme.transitions.create('opacity'),
   },
 }));
 
@@ -42,35 +94,33 @@ function skillSelected(skills, skill) {
 export default function Skills(props) {
   const classes = useStyles();
 
-  const handleChange = (event) => {
-    props.onChange(event.target.name, event.target.checked);
-  };
-
   return (
     <div className={classes.root}>
-      <FormGroup>
-        <Grid container spacing={3}>
-          {props.characterSkills.map((characterSkill) => (
-            <Grid className={classes.skillGrid} item xs={4}>
-              <Card className={skillSelected(props.currSkills, characterSkill.key) ? classes.selectedCard : classes.skillCard} variant="outlined">
-                <CardContent>
-                  <FormControlLabel
-                    control={
-                      <Checkbox
-                        checked={skillSelected(props.currSkills, characterSkill.key)}
-                        onChange={handleChange}
-                        name={characterSkill.key}
-                        color="default"
-                      />
-                    }
-                    label={characterSkill.name}
-                  />
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </FormGroup>
+      <Grid container spacing={3} justify="center">
+        {props.characterSkills.map((characterSkill) => (
+          <Grid className={classes.skillGrid} item xs={4} align="center">
+            <ButtonBase
+              focusRipple
+              key={characterSkill.key}
+              className={skillSelected(props.currSkills, characterSkill.key) ? classes.selectedSkill : classes.skillButton}
+              focusVisibleClassName={classes.focusVisible}
+              onClick={(e) => props.onChange(characterSkill.key, !skillSelected(props.currSkills, characterSkill.key))}
+            >
+              <span className={classes.buttonBackground} />
+              <span className={classes.backdrop} />
+              <span className={classes.button}>
+                <Typography
+                  component="span"
+                  variant="subtitle1"
+                  color="inherit"
+                >
+                  {characterSkill.name}
+                </Typography>
+              </span>
+            </ButtonBase>
+          </Grid>
+        ))}
+      </Grid>
     </div>
-  )
+  );
 }
