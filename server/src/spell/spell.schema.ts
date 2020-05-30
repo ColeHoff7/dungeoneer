@@ -1,7 +1,7 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const SpellSchema = new Schema({
+export const SpellSchema = new Schema({
   id: String,
   name: String,
   school: String,
@@ -15,5 +15,3 @@ const SpellSchema = new Schema({
 });
 
 SpellSchema.set('collection', 'spells');
-
-export default mongoose.model('Spell', SpellSchema);

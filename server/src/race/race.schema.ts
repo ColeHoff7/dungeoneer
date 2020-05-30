@@ -2,14 +2,14 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 export const RaceSchema = new Schema({
-    id: {type: String},
-    name: {type: String},
-    color: {type: String},
-    description: {type: String},
-    common_names: {type: Object},
-    traits: {type: Object},
-    ability_changes: {type: Object},
-    languages: {type: String}
+    id: String,
+    name: String,
+    color: String,
+    description: String,
+    common_names: Object,
+    traits: Object,
+    ability_changes: Object,
+    languages: String
 }, { timestamps: true});
 
 RaceSchema.set('collection', 'races');
