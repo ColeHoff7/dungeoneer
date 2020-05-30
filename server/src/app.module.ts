@@ -1,8 +1,9 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ArmorModule } from './armor/armor.module';
-import { RaceModule } from './race/race.module';
 import { CharacterClassModule } from './character_class/character-class.module';
+import { ItemModule } from './item/item.module';
+import { RaceModule } from './race/race.module';
 import { SkillModule } from './skill/skill.module';
 import { getSecret } from './secrets';
 
@@ -11,8 +12,9 @@ import { getSecret } from './secrets';
     MongooseModule.forRoot(getSecret('dbUri'),
     {useNewUrlParser: true}),
     ArmorModule,
-    RaceModule,
     CharacterClassModule,
+    ItemModule,
+    RaceModule,
     SkillModule],
 })
 export class AppModule {}

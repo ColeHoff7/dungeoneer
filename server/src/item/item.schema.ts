@@ -1,7 +1,7 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const ItemSchema = new Schema({
+export const ItemSchema = new Schema({
   id: String,
   name: String,
   cost: String,
@@ -12,5 +12,3 @@ const ItemSchema = new Schema({
 });
 
 ItemSchema.set('collection', 'items');
-
-export default mongoose.model('Item', ItemSchema);
