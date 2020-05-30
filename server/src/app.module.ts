@@ -6,6 +6,7 @@ import { ItemModule } from './item/item.module';
 import { RaceModule } from './race/race.module';
 import { SkillModule } from './skill/skill.module';
 import { SpellModule } from './spell/spell.module';
+import { WeaponModule } from './weapon/weapon.module';
 import { getSecret } from './secrets';
 
 @Module({
@@ -17,7 +18,8 @@ import { getSecret } from './secrets';
     ItemModule,
     RaceModule,
     SkillModule,
-    SpellModule
+    SpellModule,
+    WeaponModule
   ],
 })
 export class AppModule {}

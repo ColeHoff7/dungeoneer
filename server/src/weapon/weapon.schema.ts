@@ -1,7 +1,7 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const WeaponSchema = new Schema({
+export const WeaponSchema = new Schema({
   id: String,
   name: String,
   cost: String,
@@ -12,5 +12,3 @@ const WeaponSchema = new Schema({
 });
 
 WeaponSchema.set('collection', 'weapons');
-
-export default mongoose.model('Weapon', WeaponSchema);
