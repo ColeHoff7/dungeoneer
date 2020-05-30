@@ -1,7 +1,7 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const ArmorSchema = new Schema({
+export const ArmorSchema = new Schema({
   id: String,
   name: String,
   cost: String,
@@ -15,5 +15,3 @@ const ArmorSchema = new Schema({
 });
 
 ArmorSchema.set('collection', 'armor');
-
-export default mongoose.model('Armor', ArmorSchema);
