@@ -18,4 +18,12 @@ export class SpellService {
   async getByName(name: string): Promise<Spell[]> {
     return this.spellModel.find({ name: name }).exec();
   }
+
+  async getByLevel(level: string): Promise<Spell[]> {
+    return this.spellModel.find({ level: level }).exec();
+  }
+
+  async getBySchool(school: string): Promise<Spell[]> {
+    return this.spellModel.find({ school: school }).exec();
+  }
 }

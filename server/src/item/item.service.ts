@@ -16,6 +16,10 @@ export class ItemService {
   }
 
   async getByName(name: string): Promise<Item[]> {
-    return this.itemModel.find({ name: name }).exec();
+    return this.itemModel.find({ item: name }).exec();
+  }
+
+  async getByCategory(category: string): Promise<Item[]> {
+    return this.itemModel.find({ category: category }).exec();
   }
 }

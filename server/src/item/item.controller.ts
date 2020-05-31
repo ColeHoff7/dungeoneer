@@ -29,4 +29,12 @@ export class ItemController {
   async getById(@Param('id') id: string): Promise<Item> {
     return this.itemService.getById(id);
   }
+
+  /*
+  * Get item by category
+  */
+  @Get('/category/:category([A-Za-z]+)')
+  async getByCategory(@Param('category') category: string): Promise<Item[]> {
+    return this.itemService.getByCategory(category);
+  }
 }

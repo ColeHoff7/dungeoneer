@@ -18,4 +18,8 @@ export class ArmorService {
   async getByName(name: string): Promise<Armor[]> {
     return this.armorModel.find({ name: name }).exec();
   }
+
+  async getByArmorClass(armorClass: string): Promise<Armor[]> {
+    return this.armorModel.find({ class: armorClass }).exec();
+  }
 }

@@ -29,4 +29,12 @@ export class ArmorController {
   async getById(@Param('id') id: string): Promise<Armor> {
     return this.armorService.getById(id);
   }
+
+  /*
+  * Get armor by armor class
+  */
+ @Get('/class/:armorClass[A-Za-z]+')
+ async getByArmorClass(@Param('armorClass') armorClass: string): Promise<Armor[]> {
+   return this.armorService.getByArmorClass(armorClass);
+ }
 }

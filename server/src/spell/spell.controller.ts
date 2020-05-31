@@ -29,4 +29,20 @@ export class SpellController {
   async getById(@Param('id') id: string): Promise<Spell> {
     return this.spellService.getById(id);
   }
+
+  /*
+  * Get spell by level
+  */
+  @Get('/level/:level([0-9A-Za-z]+)')
+  async getByLevel(@Param('level') level: string): Promise<Spell[]> {
+    return this.spellService.getByLevel(level);
+  }
+
+  /*
+  * Get spell by school
+  */
+  @Get('/school/:school([A-Za-z]+)')
+  async getBySchool(@Param('school') school: string): Promise<Spell[]> {
+    return this.spellService.getBySchool(school);
+  }
 }
