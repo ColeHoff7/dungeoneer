@@ -1,4 +1,4 @@
-server/secrets.js
+server/src/secrets.ts
 node_modules/
 .DS_Store
-dist/
+server/dist/
