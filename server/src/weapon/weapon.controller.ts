@@ -29,4 +29,20 @@ export class WeaponController {
   async getById(@Param('id') id: string): Promise<Weapon> {
     return this.weaponService.getById(id);
   }
+
+  /*
+  * Get weapons by category
+  */
+ @Get('/category/:category([A-Za-z_]+)')
+ async getByCategory(@Param('category') category: string): Promise<Weapon[]> {
+   return this.weaponService.getByCategory(category);
+ }
+
+ /*
+ * Get weapons by weight category
+ */
+@Get('weightCategory/:category([A-Za-z]+)')
+async getByWeightCategory(@Param('category') category: string): Promise<Weapon[]> {
+  return this.weaponService.getByWeightCategory(category);
+}
 }
