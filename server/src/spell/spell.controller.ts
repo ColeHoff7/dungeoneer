@@ -33,10 +33,10 @@ export class SpellController {
   /*
   * Get spell by level
   */
-  @Get('/level/:level([0-9A-Za-z]+)')
-  async getByLevel(@Param('level') level: string): Promise<Spell[]> {
-    return this.spellService.getByLevel(level);
-  }
+ @Get('/level/:level([0-9]+)')
+ async getByLevel(@Param('level') level: number): Promise<Spell[]> {
+   return this.spellService.getByLevel(level);
+ }
 
   /*
   * Get spell by school

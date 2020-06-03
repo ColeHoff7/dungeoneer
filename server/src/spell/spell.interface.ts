@@ -8,5 +8,5 @@ export interface Spell extends Document{
   saving_throw: string;
   ritual_required: boolean;
   concentration_required: string;
-  level: string;
+  level: number;
 }

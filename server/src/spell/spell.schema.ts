@@ -9,7 +9,7 @@ export const SpellSchema = new Schema({
   saving_throw: String,
   ritual_required: Boolean,
   concentration_required: Boolean,
-  level: String,
+  level: Number,
 });
 
 SpellSchema.set('collection', 'spells');

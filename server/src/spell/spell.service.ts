@@ -19,7 +19,7 @@ export class SpellService {
     return this.spellModel.find({ name: name }).exec();
   }
 
-  async getByLevel(level: string): Promise<Spell[]> {
+  async getByLevel(level: number): Promise<Spell[]> {
     return this.spellModel.find({ level: level }).exec();
   }
 
