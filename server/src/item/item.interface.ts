@@ -4,8 +4,9 @@ export interface Item extends Document{
   id: string;
   name: string;
   cost: string;
-  speed: string;
-  weight: string;
-  capacity: string;
+  speed: number;
+  weight: number;
+  capacity: number;
+  tool_type: string;
   category: string;
 }
