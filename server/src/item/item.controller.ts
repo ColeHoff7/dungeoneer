@@ -33,8 +33,16 @@ export class ItemController {
   /*
   * Get item by category
   */
-  @Get('/category/:category([A-Za-z]+)')
+  @Get('/category/:category([A-Za-z_]+)')
   async getByCategory(@Param('category') category: string): Promise<Item[]> {
     return this.itemService.getByCategory(category);
   }
+
+  /*
+  * Get item by tool type
+  */
+ @Get('/toolType/:toolType([A-Za-z_]+)')
+ async getByToolType(@Param('toolType') toolType: string): Promise<Item[]> {
+   return this.itemService.getByToolType(toolType);
+ }
 }
