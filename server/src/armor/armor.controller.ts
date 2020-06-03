@@ -31,10 +31,10 @@ export class ArmorController {
   }
 
   /*
-  * Get armor by armor class
+  * Get armor by category
   */
- @Get('/class/:armorClass[A-Za-z]+')
- async getByArmorClass(@Param('armorClass') armorClass: string): Promise<Armor[]> {
-   return this.armorService.getByArmorClass(armorClass);
+ @Get('/category/:category([A-Za-z]+)')
+ async getByCategory(@Param('category') category: string): Promise<Armor[]> {
+   return this.armorService.getByCategory(category);
  }
 }
