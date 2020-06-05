@@ -8,7 +8,7 @@ export const WeaponSchema = new Schema({
   damage: String,
   weight: String,
   properties: String,
-  class: String
+  class: String,
 });
 
 WeaponSchema.set('collection', 'weapons');

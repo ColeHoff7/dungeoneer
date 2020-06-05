@@ -11,7 +11,7 @@ export const ArmorSchema = new Schema({
   weight: String,
   class: String,
   don: String,
-  doff: String
+  doff: String,
 });
 
 ArmorSchema.set('collection', 'armor');

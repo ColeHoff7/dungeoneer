@@ -5,7 +5,10 @@ import { CharacterClass } from './character-class.interface';
 
 @Injectable()
 export class CharacterClassService {
-  constructor(@InjectModel('CharacterClassModel') private characterClassModel: Model<CharacterClass>) {}
+  constructor(
+    @InjectModel('CharacterClassModel')
+    private characterClassModel: Model<CharacterClass>
+  ) {}
 
   async get(): Promise<CharacterClass[]> {
     return this.characterClassModel.find().exec();

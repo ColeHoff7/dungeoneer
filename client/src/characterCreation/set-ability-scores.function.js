@@ -14,7 +14,7 @@ import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
 import './character-creation.css';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
     flexWrap: 'wrap',
@@ -27,9 +27,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     width: '50%',
   },
-  abilityName: {
-
-  },
+  abilityName: {},
   gridRoot: {
     height: '100%',
   },
@@ -67,14 +65,30 @@ export default function AbilityScores(props) {
         <Grid className={classes.abilityScoreGrid} item xs={6}>
           <Card className={classes.abilityCard} variant="outlined">
             <CardContent>
-              <Typography className={classes.abilityName} variant="h4">Strength</Typography>
+              <Typography className={classes.abilityName} variant="h4">
+                Strength
+              </Typography>
               <br />
               <Typography variant="h4">
-                <IconButton onClick={(e) => props.onChange('strength', props.currAbilityScores.strength - 1)}>
+                <IconButton
+                  onClick={e =>
+                    props.onChange(
+                      'strength',
+                      props.currAbilityScores.strength - 1
+                    )
+                  }
+                >
                   <ArrowBackIosIcon />
                 </IconButton>
                 {props.currAbilityScores.strength}
-                <IconButton onClick={(e) => props.onChange('strength', props.currAbilityScores.strength + 1)}>
+                <IconButton
+                  onClick={e =>
+                    props.onChange(
+                      'strength',
+                      props.currAbilityScores.strength + 1
+                    )
+                  }
+                >
                   <ArrowForwardIosIcon />
                 </IconButton>
               </Typography>
@@ -84,14 +98,30 @@ export default function AbilityScores(props) {
         <Grid className={classes.abilityScoreGrid} item xs={6}>
           <Card className={classes.abilityCard} variant="outlined">
             <CardContent>
-              <Typography className={classes.abilityName} variant="h4">Dexterity</Typography>
+              <Typography className={classes.abilityName} variant="h4">
+                Dexterity
+              </Typography>
               <br />
               <Typography variant="h4">
-                <IconButton onClick={(e) => props.onChange('dexterity', props.currAbilityScores.dexterity - 1)}>
+                <IconButton
+                  onClick={e =>
+                    props.onChange(
+                      'dexterity',
+                      props.currAbilityScores.dexterity - 1
+                    )
+                  }
+                >
                   <ArrowBackIosIcon />
                 </IconButton>
                 {props.currAbilityScores.dexterity}
-                <IconButton onClick={(e) => props.onChange('dexterity', props.currAbilityScores.dexterity + 1)}>
+                <IconButton
+                  onClick={e =>
+                    props.onChange(
+                      'dexterity',
+                      props.currAbilityScores.dexterity + 1
+                    )
+                  }
+                >
                   <ArrowForwardIosIcon />
                 </IconButton>
               </Typography>
@@ -101,14 +131,30 @@ export default function AbilityScores(props) {
         <Grid className={classes.abilityScoreGrid} item xs={6}>
           <Card className={classes.abilityCard} variant="outlined">
             <CardContent>
-              <Typography className={classes.abilityName} variant="h4">Constitution</Typography>
+              <Typography className={classes.abilityName} variant="h4">
+                Constitution
+              </Typography>
               <br />
               <Typography variant="h4">
-                <IconButton onClick={(e) => props.onChange('constitution', props.currAbilityScores.constitution - 1)}>
+                <IconButton
+                  onClick={e =>
+                    props.onChange(
+                      'constitution',
+                      props.currAbilityScores.constitution - 1
+                    )
+                  }
+                >
                   <ArrowBackIosIcon />
                 </IconButton>
                 {props.currAbilityScores.constitution}
-                <IconButton onClick={(e) => props.onChange('constitution', props.currAbilityScores.constitution + 1)}>
+                <IconButton
+                  onClick={e =>
+                    props.onChange(
+                      'constitution',
+                      props.currAbilityScores.constitution + 1
+                    )
+                  }
+                >
                   <ArrowForwardIosIcon />
                 </IconButton>
               </Typography>
@@ -118,14 +164,30 @@ export default function AbilityScores(props) {
         <Grid className={classes.abilityScoreGrid} item xs={6}>
           <Card className={classes.abilityCard} variant="outlined">
             <CardContent>
-              <Typography className={classes.abilityName} variant="h4">Intelligence</Typography>
+              <Typography className={classes.abilityName} variant="h4">
+                Intelligence
+              </Typography>
               <br />
               <Typography variant="h4">
-                <IconButton onClick={(e) => props.onChange('intelligence', props.currAbilityScores.intelligence - 1)}>
+                <IconButton
+                  onClick={e =>
+                    props.onChange(
+                      'intelligence',
+                      props.currAbilityScores.intelligence - 1
+                    )
+                  }
+                >
                   <ArrowBackIosIcon />
                 </IconButton>
                 {props.currAbilityScores.intelligence}
-                <IconButton onClick={(e) => props.onChange('intelligence', props.currAbilityScores.intelligence + 1)}>
+                <IconButton
+                  onClick={e =>
+                    props.onChange(
+                      'intelligence',
+                      props.currAbilityScores.intelligence + 1
+                    )
+                  }
+                >
                   <ArrowForwardIosIcon />
                 </IconButton>
               </Typography>
@@ -135,14 +197,24 @@ export default function AbilityScores(props) {
         <Grid className={classes.abilityScoreGrid} item xs={6}>
           <Card className={classes.abilityCard} variant="outlined">
             <CardContent>
-              <Typography className={classes.abilityName} variant="h4">Wisdom</Typography>
+              <Typography className={classes.abilityName} variant="h4">
+                Wisdom
+              </Typography>
               <br />
               <Typography variant="h4">
-                <IconButton onClick={(e) => props.onChange('wisdom', props.currAbilityScores.wisdom - 1)}>
+                <IconButton
+                  onClick={e =>
+                    props.onChange('wisdom', props.currAbilityScores.wisdom - 1)
+                  }
+                >
                   <ArrowBackIosIcon />
                 </IconButton>
                 {props.currAbilityScores.wisdom}
-                <IconButton onClick={(e) => props.onChange('wisdom', props.currAbilityScores.wisdom + 1)}>
+                <IconButton
+                  onClick={e =>
+                    props.onChange('wisdom', props.currAbilityScores.wisdom + 1)
+                  }
+                >
                   <ArrowForwardIosIcon />
                 </IconButton>
               </Typography>
@@ -152,14 +224,30 @@ export default function AbilityScores(props) {
         <Grid className={classes.abilityScoreGrid} item xs={6}>
           <Card className={classes.abilityCard} variant="outlined">
             <CardContent>
-              <Typography className={classes.abilityName} variant="h4">Charisma</Typography>
+              <Typography className={classes.abilityName} variant="h4">
+                Charisma
+              </Typography>
               <br />
               <Typography variant="h4">
-                <IconButton onClick={(e) => props.onChange('charisma', props.currAbilityScores.charisma - 1)}>
+                <IconButton
+                  onClick={e =>
+                    props.onChange(
+                      'charisma',
+                      props.currAbilityScores.charisma - 1
+                    )
+                  }
+                >
                   <ArrowBackIosIcon />
                 </IconButton>
                 {props.currAbilityScores.charisma}
-                <IconButton onClick={(e) => props.onChange('charisma', props.currAbilityScores.charisma + 1)}>
+                <IconButton
+                  onClick={e =>
+                    props.onChange(
+                      'charisma',
+                      props.currAbilityScores.charisma + 1
+                    )
+                  }
+                >
                   <ArrowForwardIosIcon />
                 </IconButton>
               </Typography>
@@ -168,5 +256,5 @@ export default function AbilityScores(props) {
         </Grid>
       </Grid>
     </div>
-  )
+  );
 }

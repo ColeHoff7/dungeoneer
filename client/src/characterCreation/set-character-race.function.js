@@ -4,7 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
     flexWrap: 'wrap',
@@ -87,7 +87,9 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     position: 'relative',
-    padding: `${theme.spacing(2)}px ${theme.spacing(4)}px ${theme.spacing(1) + 6}px`,
+    padding: `${theme.spacing(2)}px ${theme.spacing(4)}px ${
+      theme.spacing(1) + 6
+    }px`,
   },
   marked: {
     height: 3,
@@ -106,15 +108,19 @@ export default function CharacterRaces(props) {
   return (
     <div className={classes.root}>
       <Grid container spacing={3} justify="center">
-        {props.characterRaces.map((characterRace) => (
+        {props.characterRaces.map(characterRace => (
           <Grid className={classes.raceGrid} item xs={4} align="center">
             <ButtonBase
               focusRipple
               key={characterRace.name}
-              className={characterRace.name === props.currRace ? classes.selectedRace : classes.buttonBase}
-              style={{backgroundColor: characterRace.color}}
+              className={
+                characterRace.name === props.currRace
+                  ? classes.selectedRace
+                  : classes.buttonBase
+              }
+              style={{ backgroundColor: characterRace.color }}
               focusVisibleClassName={classes.focusVisible}
-              onClick={(e) => props.onChange(characterRace.name)}
+              onClick={e => props.onChange(characterRace.name)}
             >
               <span className={classes.buttonBackground} />
               <span className={classes.backdrop} />
@@ -134,5 +140,5 @@ export default function CharacterRaces(props) {
         ))}
       </Grid>
     </div>
-  )
+  );
 }

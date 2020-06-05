@@ -8,7 +8,7 @@ export const ItemSchema = new Schema({
   speed: String,
   weight: String,
   capacity: String,
-  category: String
+  category: String,
 });
 
 ItemSchema.set('collection', 'items');

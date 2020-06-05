@@ -11,7 +11,7 @@ export const SpellSchema = new Schema({
   concentration: String,
   level: String,
   description: String,
-  classes: String
+  classes: String,
 });
 
 SpellSchema.set('collection', 'spells');

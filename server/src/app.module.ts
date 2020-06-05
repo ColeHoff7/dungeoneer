@@ -11,15 +11,14 @@ import { getSecret } from './secrets';
 
 @Module({
   imports: [
-    MongooseModule.forRoot(getSecret('dbUri'),
-    {useNewUrlParser: true}),
+    MongooseModule.forRoot(getSecret('dbUri'), { useNewUrlParser: true }),
     ArmorModule,
     CharacterClassModule,
     ItemModule,
     RaceModule,
     SkillModule,
     SpellModule,
-    WeaponModule
+    WeaponModule,
   ],
 })
 export class AppModule {}

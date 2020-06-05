@@ -71,7 +71,6 @@ export default function CreationTabs(props) {
   };
 
   return (
-
     <div className={classes.root}>
       <Tabs
         orientation="vertical"
@@ -81,7 +80,6 @@ export default function CreationTabs(props) {
         aria-label="Vertical tabs example"
         className={classes.tabs}
       >
-
         <Tab label="Race" {...a11yProps(0)} />
         <Tab label="Class" {...a11yProps(1)} />
         <Tab label="Ability Scores" {...a11yProps(2)} />
@@ -89,7 +87,6 @@ export default function CreationTabs(props) {
         <Tab label="Equipment" {...a11yProps(4)} />
         <Tab label="Background" {...a11yProps(5)} />
         <Tab label="Review & Complete" {...a11yProps(6)} />
-
       </Tabs>
       <TabPanel className={classes.tabPanel} value={value} index={0}>
         <CharacterRaces
@@ -108,7 +105,8 @@ export default function CreationTabs(props) {
       <TabPanel className={classes.tabPanel} value={value} index={2}>
         <AbilityScores
           currAbilityScores={props.currAbilityScores}
-          onChange={props.onAbilityScoresChange} />
+          onChange={props.onAbilityScoresChange}
+        />
       </TabPanel>
       <TabPanel className={classes.tabPanel} value={value} index={3}>
         <Skills

@@ -1,6 +1,6 @@
 import { Document } from 'mongoose';
 
-export interface Spell extends Document{
+export interface Spell extends Document {
   id: string;
   name: string;
   school: string;
@@ -10,5 +10,5 @@ export interface Spell extends Document{
   concentration: string;
   level: string;
   description: string;
-  classes:string;
+  classes: string;
 }

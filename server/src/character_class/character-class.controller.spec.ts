@@ -11,7 +11,9 @@ describe('CharacterClassController', () => {
       providers: [CharacterClassService],
     }).compile();
 
-    characterClassController = app.get<CharacterClassController>(CharacterClassController);
+    characterClassController = app.get<CharacterClassController>(
+      CharacterClassController
+    );
   });
 
   describe('root', () => {
