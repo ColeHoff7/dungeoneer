@@ -19,7 +19,7 @@ export class ArmorService {
     return this.armorModel.find({ name: name }).exec();
   }
 
-  async getByArmorClass(armorClass: string): Promise<Armor[]> {
-    return this.armorModel.find({ class: armorClass }).exec();
+  async getByCategory(category: string): Promise<Armor[]> {
+    return this.armorModel.find({ category: category }).exec();
   }
 }

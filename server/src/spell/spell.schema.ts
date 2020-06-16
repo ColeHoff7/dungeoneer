@@ -7,11 +7,9 @@ export const SpellSchema = new Schema({
   school: String,
   casting_time: String,
   saving_throw: String,
-  ritual: String,
-  concentration: String,
-  level: String,
-  description: String,
-  classes: String,
+  ritual_required: Boolean,
+  concentration_required: Boolean,
+  level: Number,
 });
 
 SpellSchema.set('collection', 'spells');

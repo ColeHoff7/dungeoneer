@@ -22,4 +22,8 @@ export class ItemService {
   async getByCategory(category: string): Promise<Item[]> {
     return this.itemModel.find({ category: category }).exec();
   }
+
+  async getByToolType(toolType: string): Promise<Item[]> {
+    return this.itemModel.find({ tool_type: toolType }).exec();
+  }
 }

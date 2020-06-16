@@ -5,10 +5,11 @@ export const ItemSchema = new Schema({
   id: String,
   name: String,
   cost: String,
-  speed: String,
-  weight: String,
-  capacity: String,
-  category: String,
+  speed: Number,
+  weight: Number,
+  capacity: Number,
+  tool_type: String,
+  category: String
 });
 
 ItemSchema.set('collection', 'items');

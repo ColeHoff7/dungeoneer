@@ -18,4 +18,12 @@ export class WeaponService {
   async getByName(name: string): Promise<Weapon[]> {
     return this.weaponModel.find({ name: name }).exec();
   }
+
+  async getByCategory(category: string): Promise<Weapon[]> {
+    return this.weaponModel.find({ category: category }).exec()
+  }
+
+  async getByWeightCategory(category: string): Promise<Weapon[]> {
+    return this.weaponModel.find({ weight_category: category}).exec();
+  }
 }
