@@ -1,6 +1,6 @@
 import { Document } from 'mongoose';
 
-export interface Spell extends Document{
+export interface Spell extends Document {
   id: string;
   name: string;
   school: string;

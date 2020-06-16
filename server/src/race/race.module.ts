@@ -5,7 +5,9 @@ import { RaceService } from './race.service';
 import { RaceSchema } from './race.schema';
 
 @Module({
-  imports: [MongooseModule.forFeature([{ name: 'RaceModel', schema: RaceSchema }])],
+  imports: [
+    MongooseModule.forFeature([{ name: 'RaceModel', schema: RaceSchema }]),
+  ],
   controllers: [RaceController],
   providers: [RaceService],
 })

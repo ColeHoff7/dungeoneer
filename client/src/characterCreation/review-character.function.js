@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
     flexWrap: 'wrap',
@@ -16,10 +16,14 @@ export default function ReviewCharacter(props) {
 
   return (
     <div className={classes.root}>
-      <p>{String(props.currRace)}</p><br/>
-      <p>{String(props.currClass)}</p><br/>
-      <p>{String(props.currAbilityScores)}</p><br/>
-      <p>{String(props.currSkills)}</p><br/>
+      <p>{String(props.currRace)}</p>
+      <br />
+      <p>{String(props.currClass)}</p>
+      <br />
+      <p>{String(props.currAbilityScores)}</p>
+      <br />
+      <p>{String(props.currSkills)}</p>
+      <br />
     </div>
   );
 }

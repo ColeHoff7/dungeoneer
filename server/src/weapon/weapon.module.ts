@@ -5,7 +5,9 @@ import { WeaponService } from './weapon.service';
 import { WeaponSchema } from './weapon.schema';
 
 @Module({
-  imports: [MongooseModule.forFeature([{ name: 'WeaponModel', schema: WeaponSchema }])],
+  imports: [
+    MongooseModule.forFeature([{ name: 'WeaponModel', schema: WeaponSchema }]),
+  ],
   controllers: [WeaponController],
   providers: [WeaponService],
 })

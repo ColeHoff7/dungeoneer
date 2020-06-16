@@ -7,24 +7,24 @@ export class ItemController {
   constructor(private readonly itemService: ItemService) {}
 
   /*
-  * Get all items
-  */
+   * Get all items
+   */
   @Get()
   async get(): Promise<Item[]> {
     return this.itemService.get();
   }
 
   /*
-  * Get item by name
-  */
+   * Get item by name
+   */
   @Get(':name([A-Za-z]+)')
   async getByName(@Param('name') name: string): Promise<Item[]> {
     return this.itemService.getByName(name);
   }
 
   /*
-  * Get item by id
-  */
+   * Get item by id
+   */
   @Get(':id')
   async getById(@Param('id') id: string): Promise<Item> {
     return this.itemService.getById(id);

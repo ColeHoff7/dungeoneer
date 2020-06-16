@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-export const RaceSchema = new Schema({
+export const RaceSchema = new Schema(
+  {
     id: String,
     name: String,
     color: String,
@@ -9,7 +10,9 @@ export const RaceSchema = new Schema({
     common_names: Object,
     traits: Object,
     ability_changes: Object,
-    languages: String
-}, { timestamps: true});
+    languages: String,
+  },
+  { timestamps: true }
+);
 
 RaceSchema.set('collection', 'races');

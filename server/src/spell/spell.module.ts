@@ -5,7 +5,9 @@ import { SpellService } from './spell.service';
 import { SpellSchema } from './spell.schema';
 
 @Module({
-  imports: [MongooseModule.forFeature([{ name: 'SpellModel', schema: SpellSchema }])],
+  imports: [
+    MongooseModule.forFeature([{ name: 'SpellModel', schema: SpellSchema }]),
+  ],
   controllers: [SpellController],
   providers: [SpellService],
 })

@@ -7,11 +7,15 @@
     "start:server": "cd server && yarn start",
     "start:client": "cd client && yarn start",
     "start:dev": "concurrently \"yarn start:server\" \"yarn start:client\"",
-    "install:all": "concurrently \"cd server && yarn install\" \"cd client && yarn install\""
+    "install:all": "concurrently \"cd server && yarn install\" \"cd client && yarn install\"",
+    "prettier-fix": "yarn run prettier --write 'server/src/**/*.ts' 'client/src/**/*.js'"
   },
   "author": "",
   "license": "",
   "dependencies": {
     "concurrently": "^3.5.1"
+  },
+  "devDependencies": {
+    "prettier": "2.0.5"
   }
 }

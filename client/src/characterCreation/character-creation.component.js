@@ -5,7 +5,6 @@ import CreationTabs from './creation-tabs.function';
 const _ = require('lodash');
 
 export default class CharacterCreation extends Component {
-
   constructor(props) {
     super(props);
 
@@ -13,22 +12,23 @@ export default class CharacterCreation extends Component {
       characterClasses: [],
       characterRaces: [],
       characterSkills: [],
-      currClass: "",
-      currRace: "",
+      currClass: '',
+      currRace: '',
       currAbilityScores: {
-        "strength": 0,
-        "dexterity": 0,
-        "constitution": 0,
-        "intelligence": 0,
-        "wisdom": 0,
-        "charisma": 0
+        strength: 0,
+        dexterity: 0,
+        constitution: 0,
+        intelligence: 0,
+        wisdom: 0,
+        charisma: 0,
       },
-      currSkills: []
-    }
+      currSkills: [],
+    };
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3001/api/class')
+    axios
+      .get('http://localhost:3001/api/class')
       .then(response => {
         this.setState({ characterClasses: response.data });
       })
@@ -36,7 +36,8 @@ export default class CharacterCreation extends Component {
         console.log(error);
       });
 
-    axios.get('http://localhost:3001/api/race')
+    axios
+      .get('http://localhost:3001/api/race')
       .then(response => {
         this.setState({ characterRaces: response.data });
       })
@@ -44,7 +45,8 @@ export default class CharacterCreation extends Component {
         console.log(error);
       });
 
-    axios.get('http://localhost:3001/api/skill')
+    axios
+      .get('http://localhost:3001/api/skill')
       .then(response => {
         this.setState({ characterSkills: response.data });
       })
@@ -53,11 +55,11 @@ export default class CharacterCreation extends Component {
       });
   }
 
-  onClassChange = (characterClassName) => {
+  onClassChange = characterClassName => {
     this.setState({ currClass: characterClassName });
   };
 
-  onRaceChange = (characterRaceName) => {
+  onRaceChange = characterRaceName => {
     this.setState({ currRace: characterRaceName });
   };
 
@@ -70,7 +72,7 @@ export default class CharacterCreation extends Component {
 
   onSkillsChange = (skill, checked) => {
     if (checked) {
-      this.setState({ currSkills: _.concat(this.state.currSkills, skill) })
+      this.setState({ currSkills: _.concat(this.state.currSkills, skill) });
     } else {
       this.setState({ currSkills: _.pull(this.state.currSkills, skill) });
     }
@@ -93,7 +95,6 @@ export default class CharacterCreation extends Component {
           currSkills={this.state.currSkills}
         />
       </div>
-    )
+    );
   }
-
 }

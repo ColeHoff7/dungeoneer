@@ -5,12 +5,7 @@ import FormGroup from '@material-ui/core/FormGroup';
 export default function Equipment(props) {
   return (
     <FormGroup>
-      <TextField
-        variant='outlined'
-        multiline
-        rows={4}
-        label='Equipment'
-      />
+      <TextField variant="outlined" multiline rows={4} label="Equipment" />
     </FormGroup>
   );
 }

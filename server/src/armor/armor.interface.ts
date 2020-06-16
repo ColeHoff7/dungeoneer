@@ -1,6 +1,6 @@
 import { Document } from 'mongoose';
 
-export interface Armor extends Document{
+export interface Armor extends Document {
   id: string;
   name: string;
   cost: string;

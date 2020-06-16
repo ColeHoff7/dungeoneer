@@ -5,7 +5,11 @@ import { CharacterClassService } from './character-class.service';
 import { CharacterClassSchema } from './character-class.schema';
 
 @Module({
-  imports: [MongooseModule.forFeature([{ name: 'CharacterClassModel', schema: CharacterClassSchema }])],
+  imports: [
+    MongooseModule.forFeature([
+      { name: 'CharacterClassModel', schema: CharacterClassSchema },
+    ]),
+  ],
   controllers: [CharacterClassController],
   providers: [CharacterClassService],
 })

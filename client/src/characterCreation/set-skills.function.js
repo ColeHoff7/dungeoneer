@@ -8,7 +8,7 @@ import './character-creation.css';
 
 const _ = require('lodash');
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
     flexWrap: 'wrap',
@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
       zIndex: 1,
       '& $backdrop': {
         opacity: 0.15,
-      }
+      },
     },
   },
   selectedSkill: {
@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 1,
     '& $backdrop': {
       opacity: 0.15,
-    }
+    },
   },
   button: {
     position: 'absolute',
@@ -89,23 +89,28 @@ export default function Skills(props) {
   return (
     <div className={classes.root}>
       <Grid container spacing={3} justify="center">
-        {props.characterSkills.map((characterSkill) => (
+        {props.characterSkills.map(characterSkill => (
           <Grid className={classes.skillGrid} item xs={4} align="center">
             <ButtonBase
               focusRipple
               key={characterSkill.key}
-              className={skillSelected(props.currSkills, characterSkill.key) ? classes.selectedSkill : classes.skillButton}
+              className={
+                skillSelected(props.currSkills, characterSkill.key)
+                  ? classes.selectedSkill
+                  : classes.skillButton
+              }
               focusVisibleClassName={classes.focusVisible}
-              onClick={(e) => props.onChange(characterSkill.key, !skillSelected(props.currSkills, characterSkill.key))}
+              onClick={e =>
+                props.onChange(
+                  characterSkill.key,
+                  !skillSelected(props.currSkills, characterSkill.key)
+                )
+              }
             >
               <span className={classes.buttonBackground} />
               <span className={classes.backdrop} />
               <span className={classes.button}>
-                <Typography
-                  component="span"
-                  variant="h6"
-                  color="inherit"
-                >
+                <Typography component="span" variant="h6" color="inherit">
                   {characterSkill.name}
                 </Typography>
               </span>
