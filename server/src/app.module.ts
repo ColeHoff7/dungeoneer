@@ -8,6 +8,7 @@ import { SkillModule } from './skill/skill.module';
 import { SpellModule } from './spell/spell.module';
 import { WeaponModule } from './weapon/weapon.module';
 import { getSecret } from './secrets';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { getSecret } from './secrets';
     SkillModule,
     SpellModule,
     WeaponModule,
+    AuthModule,
   ],
 })
 export class AppModule {}
