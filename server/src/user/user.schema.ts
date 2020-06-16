@@ -12,6 +12,13 @@ export const UserSchema = new Schema(
   { timestamps: true }
 );
 
+if (!UserSchema.options.toObject) UserSchema.options.toObject = {};
+UserSchema.options.toObject.transform = function (doc, ret, options) {
+    // remove the password of every document before returning the result
+    delete ret.password;
+    return ret;
+}
+
 UserSchema.pre('save', function(next) {
     // TODO: validate that all fields exist and are correct
     const user = this;
