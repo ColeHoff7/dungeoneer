@@ -19,7 +19,12 @@ export class CharacterService {
         return this.characterModel.find({ user_id: userId }).exec();
     }
 
-    // async add(Character c): Promise<Character> {
-    //     return this.characterModel.
-    // }
+    async save(character: Character): Promise<Character> {
+        const newCharacter = new this.characterModel(character);
+        return newCharacter.save();
+    }
+
+    async deleteById(id: string): Promise<Character> {
+        return this.characterModel.findByIdAndDelete(id);
+    }
 }
